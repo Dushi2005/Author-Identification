@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Author Identifier</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #2c3e50, #3498db);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #34495e;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            width: 60%;
+        }
+        textarea {
+            width: 100%;
+            padding: 15px;
+            border-radius: 10px;
+            border: none;
+            resize: none;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        input[type="submit"] {
+            background-color: #1abc9c;
+            color: white;
+            padding: 12px 30px;
+            font-size: 16px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        input[type="submit"]:hover {
+            background-color: #16a085;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 22px;
+            font-weight: bold;
+            color: #ffeaa7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Author Identification System</h2>
+        <form method="post">
+            <textarea name="text" rows="6" placeholder="Enter your sentence here..."></textarea><br>
+            <input type="submit" value="Predict Author">
+        </form>
+        {% if prediction %}
+            <div class="result">Predicted Author: {{ prediction }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>
